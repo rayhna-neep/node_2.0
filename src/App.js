@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import MyCard from "./MyCard";
+import ProfilImage from "./Pimage";
+
+const firstName = "Rayhan";
 
 function App() {
+  const greeting = firstName ? `Hello, ${firstName}!` : "Hello, there!";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="position-relative vh-100 d-flex flex-column justify-content-center align-items-center"
+      style={{
+        backgroundColor: "#ADD8E6", 
+      }}
+    >
+      {firstName && <ProfilImage />}
+      <MyCard />
+
+      <p
+        style={{
+          color: "#063006ff", 
+          fontSize: "1.25rem",
+          fontWeight: "500",
+          marginTop: "10px",
+        }}
+      >
+        {greeting}
+      </p>
     </div>
   );
 }
